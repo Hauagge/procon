@@ -1,0 +1,203 @@
+<!--
+  Generated template for the Formula1Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Formula de Desidrometria 1</ion-title>
+  </ion-navbar>
+
+  <h3 text-center>Fórmula aplicável a Processo Administrativo Instaurado por Ato de Ofício. </h3>
+    <button ion-button item-end (click)="showAlert()">
+        <ion-icon name="information-circle"></ion-icon>
+    </button>
+</ion-header>
+
+<ion-content padding>
+   
+    <ion-list>
+      <ion-item>
+         <ion-label fixed>Valor Mínimo</ion-label> 
+        <ion-input type="number" [(ngModel)]="MM"></ion-input>
+        <button ion-button item-end (click)="openInformacoes1Page()">
+            <ion-icon name="information-circle"></ion-icon>
+        </button>
+      </ion-item>
+    </ion-list>
+    
+    
+<br/>
+<ion-list>
+  <ion-item>
+    <ion-label>Ìndice de gravidade (IG)</ion-label>
+    <ion-select id='IG' [(ngModel)]="IG">
+      <ion-option value="1" >Grupo I</ion-option>
+      <ion-option value="2" >Grupo II</ion-option>
+      <ion-option value="3" >Grupo III</ion-option>
+    </ion-select>
+    <button ion-button item-end (click)="openInformacoes2Page()">
+        <ion-icon name="information-circle"></ion-icon>
+    </button>
+  </ion-item>
+</ion-list>
+
+
+<ion-list>
+    <ion-item>    
+     <ion-label text-wrap >Situação Econômica da Empresa (SE)</ion-label>
+          <ion-select id='SE' [(ngModel)]="infracao">
+             <ion-option  value="homogeneo"  >Infração de carater individual ou individual homogeneo</ion-option>
+          <ion-option value="coletivo"   >Infração de Carater coletivo</ion-option>
+          <ion-option value="difuso" >Infração de Carater Difuso</ion-option>
+      </ion-select>
+      <button ion-button item-end (click)="openInformacoes3Page()">
+          <ion-icon name="information-circle"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+
+<ion-list *ngIf="infracao=='homogeneo'">
+
+  <ion-item>    
+   <ion-label text-wrap >Infração de carater individual ou individual homogeneo</ion-label>
+        <ion-select  [(ngModel)]="SE">
+        <ion-option value="1.5" >Microempresa Individual</ion-option>
+        <ion-option value="2"   >Microempresa</ion-option>
+        <ion-option value="2.5" >Empresa de pequeno porte</ion-option>
+        <ion-option value="3"   >Media Empresa</ion-option>
+        <ion-option value="3.5" >Grande Empresa</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+
+
+
+  <ion-list *ngIf="infracao=='coletivo'">
+      <ion-item>    
+       <ion-label>Infração de Carater coletivo</ion-label>
+            <ion-select  [(ngModel)]="SE">
+            <ion-option value="20" >Microempresa Individual</ion-option>
+            <ion-option value="25"   >Microempresa</ion-option>
+            <ion-option value="30" >Empresa de pequeno porte</ion-option>
+            <ion-option value="35"   >Media Empresa</ion-option>
+            <ion-option value="40" >Grande Empresa</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngIf="infracao=='difuso'">
+        <ion-item>    
+         <ion-label>Infração de Carater Difuso</ion-label>
+              <ion-select  [(ngModel)]="SE">
+              <ion-option value="30" >Microempresa Individual</ion-option>
+              <ion-option value="35"   >Microempresa</ion-option>
+              <ion-option value="40" >Empresa de pequeno porte</ion-option>
+              <ion-option value="45"   >Media Empresa</ion-option>
+              <ion-option value="50" >Grande Empresa</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+
+
+
+
+  <ion-list>
+      <ion-item>    
+       <ion-label>Vantagem Auferida (VA)</ion-label>
+            <ion-select id='VA' [(ngModel)]="VA">
+            <ion-option  value="1.2" >Dano de 0,01 até 100,00         </ion-option>
+            <ion-option value="1.3" >Dano de 100,01 até 1.000,00     </ion-option>
+            <ion-option value="1.4" >Dano de 1.000,01 até 10.000,00  </ion-option>
+            <ion-option value="1.5" >Dano de 10.000,01 até 50.000,00  </ion-option>
+            <ion-option value="1.6" >Dano de 50.000,01 até 100.000,00</ion-option>
+            <ion-option value="1.7" >Dano de 100.000,01 até 300.000,00</ion-option>
+            <ion-option value="1.8" >Dano de 300.000,01 até 700.000,00</ion-option>
+            <ion-option value="1.9" >Acima de 700.000,00              </ion-option>
+            <ion-option value="1"   >Não Quantificável                </ion-option>
+        </ion-select>
+        <button ion-button item-end (click)="openInformacoes4Page()">
+            <ion-icon name="information-circle"></ion-icon>
+        </button>
+      </ion-item>
+    </ion-list>
+   
+
+   
+  <ion-list>
+    <ion-item>
+      <ion-label>Número de Atenuações (AT)</ion-label>
+      <ion-select id='AT' [(ngModel)]="AT">
+        <ion-option value="1"    >Nenhum  </ion-option>
+        <ion-option value="0.9" >1        </ion-option>
+        <ion-option value="0.8" >2        </ion-option>
+        <ion-option value="0.7" >3        </ion-option>
+      </ion-select>
+      <button ion-button item-end (click)="openInformacoes5Page()">
+          <ion-icon name="information-circle"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+
+  
+
+  <ion-list>
+      <ion-item>    
+       <ion-label>Agravantes (AG) </ion-label>
+            <ion-select id='AG' [(ngModel)]="AG">
+             <ion-option value="1" >Nenhum                          </ion-option>
+            <ion-option value="1.1" >1 INCISO  - (Exceto inciso I)  </ion-option>
+            <ion-option value="1.2" >2 INCISOS - (Exceto inciso I)  </ion-option>
+            <ion-option value="1.3" >3 INCISOS - (Exceto inciso I)  </ion-option>
+            <ion-option value="1.4" >4 INCISOS - (Exceto inciso I)  </ion-option>
+            <ion-option value="1.5" >5 INCISOS - (Exceto inciso I)  </ion-option>
+            <ion-option value="1.6" >6 INCISOS - (Exceto inciso I)  </ion-option>
+            <ion-option value="1.7" >7 INCISOS - (Exceto inciso I)  </ion-option>
+            <ion-option value="1.8" >8 INCISOS - (Exceto inciso I)  </ion-option>
+        </ion-select>
+        <button ion-button item-end (click)="openInformacoes6Page()">
+            <ion-icon name="information-circle"></ion-icon>
+        </button>
+      </ion-item>
+    </ion-list>
+
+
+
+    <ion-list>
+        <ion-item>    
+         <ion-label>Reincidencia (REI) </ion-label>
+              <ion-select id='REI' [(ngModel)]="REI">
+              <ion-option value="1"   >Não Reincidente  </ion-option> 
+              <ion-option value="1.1" >Número de Reclamações 1-10  </ion-option>
+              <ion-option value="1.2" >Número de Reclamações 11-21  </ion-option>
+              <ion-option value="1.3" >Número de Reclamações 22-32  </ion-option>
+              <ion-option value="1.4" >Número de Reclamações 33-43  </ion-option>
+              <ion-option value="1.5" >Número de Reclamações 44-54  </ion-option>
+              <ion-option value="1.6" >Número de Reclamações 55-65  </ion-option>
+              <ion-option value="1.7" >Número de Reclamações 66-76  </ion-option>
+              <ion-option value="1.8" >Número de Reclamações 77-87  </ion-option>
+              <ion-option value="1.9" >Acima de 88                  </ion-option>
+          </ion-select>
+          <button ion-button item-end (click)="openInformacoes7Page()">
+              <ion-icon name="information-circle"></ion-icon>
+          </button>
+        </ion-item>
+      </ion-list>
+
+     
+
+
+    
+    <button ion-button full (click)="calcularresultado()">Calcular</button>
+    <br/>
+
+
+
+
+
+
+</ion-content>
